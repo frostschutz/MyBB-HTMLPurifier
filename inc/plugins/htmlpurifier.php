@@ -110,7 +110,7 @@ function htmlpurifier_pm($handler)
  */
 function htmlpurifier_sig_ucp()
 {
-    global $mybb;
+    global $mybb, $settings;
 
     $mybb->input['signature'] = htmlpurifier_do($mybb->input['signature'],
                                                 $settings['sigmycode']);
