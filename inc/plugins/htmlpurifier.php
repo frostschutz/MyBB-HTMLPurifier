@@ -35,7 +35,7 @@ function htmlpurifier_info()
         "author"        => "Andreas Klauer",
         "authorsite"    => "mailto:Andreas.Klauer@metamorpher.de",
         "version"       => "1.0",
-        "guid"          => "",
+        "guid"          => "b27ff3ca01fe7fa37927416e86d48fae",
         "compatibility" => "16*"
         );
 }
