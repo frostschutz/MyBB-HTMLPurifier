@@ -42,6 +42,8 @@ function htmlpurifier_info()
 
 function htmlpurifier_activate()
 {
+    @mkdir(MYBB_ROOT.'cache/htmlpurifier');
+
     if(!@file_exists(MYBB_ROOT.'inc/plugins/htmlpurifier/HTMLPurifier.php')
        || !@file_exists(MYBB_ROOT.'inc/plugins/htmlpurifier/HTMLPurifier.auto.php')
        || !@file_exists(MYBB_ROOT.'inc/plugins/htmlpurifier/HTMLPurifier.func.php'))
