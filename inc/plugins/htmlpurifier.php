@@ -31,7 +31,7 @@ function htmlpurifier_info()
     return array(
         "name"          => "HTMLPurifier for MyBB",
         "description"   => "Remove malicious code from HTML in posts. Depends on <a href=\"http://htmlpurifier.org/\"><img src=\"http://htmlpurifier.org/live/art/powered.png\" alt=\"Powered by HTML Purifier\" border=\"0\" /> library</a>.",
-        "website"       => "http://github.com/frostschutz",
+        "website"       => "https://github.com/frostschutz/HTMLPurifier-MyBB",
         "author"        => "Andreas Klauer",
         "authorsite"    => "mailto:Andreas.Klauer@metamorpher.de",
         "version"       => "1.0",
@@ -49,6 +49,12 @@ function htmlpurifier_activate()
        || !@file_exists(MYBB_ROOT.'inc/plugins/htmlpurifier/HTMLPurifier.func.php'))
     {
         flash_message('The <a href="http://htmlpurifier.org/"><img src="http://htmlpurifier.org/live/art/powered.png" alt="Powered by HTML Purifier" border="0" /> library</a> is missing. Please download it and upload the contents of the <em>library/</em> folder to <em>inc/plugins/htmlpurifier/</em>', 'error');
+        admin_redirect('index.php?module=config-plugins');
+    }
+
+    if(!@is_writable(MYBB_ROOT.'cache/htmlpurifier/'))
+    {
+        flash_message('Please create a directory <em>cache/htmlpurifier</em> and make it writable.', 'error');
         admin_redirect('index.php?module=config-plugins');
     }
 }
